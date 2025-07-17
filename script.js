@@ -10,9 +10,10 @@ function makeGrid(squares)
             let row = document.createElement("div")
             row.classList.add("row")
             row.style.border = "2px solid black"
-            row.innerText = (i * squares) + j;
             column.appendChild(row)
         }
         grid.appendChild(column)
     }
 }
+
+makeGrid(16)
