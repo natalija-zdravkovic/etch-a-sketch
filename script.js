@@ -1,6 +1,7 @@
+let grid = document.querySelector(".grid")
+
 function makeGrid(squares)
 {
-    let grid = document.querySelector(".grid")
     for (let i = 0; i < squares; i++)
     {
         let column = document.createElement("div")
@@ -27,4 +28,21 @@ squares.forEach(square =>
             square.classList.add("colored");
         });
     });
+
+
+function deleteGrid(squares)
+{
+    for (let i = 0; i < squares; i++)
+    {
+        let column = document.querySelector(".column")
+        column.remove()
+        for (let j = 1; j <= squares; j++)
+        {
+            let row = document.querySelector(".row")
+            row.remove()
+        }
+    }
+}
+
+//deleteGrid(16)
 
