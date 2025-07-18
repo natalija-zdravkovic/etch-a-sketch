@@ -17,3 +17,14 @@ function makeGrid(squares)
 }
 
 makeGrid(16)
+
+let squares = document.querySelectorAll(".grid .column .row");
+
+squares.forEach(square => 
+    {
+        square.addEventListener("mouseover", () => 
+        {
+            square.classList.add("colored");
+        });
+    });
+
