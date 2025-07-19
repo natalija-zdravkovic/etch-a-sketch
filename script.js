@@ -17,33 +17,47 @@ function makeGrid(squares)
     }
 }
 
-makeGrid(16)
-
-let squares = document.querySelectorAll(".grid .column .row");
-let squareNumber = squares.length
-
-squares.forEach(square => 
+function colorCell()
+{
+    let squares = document.querySelectorAll(".grid .column .row")
+    squares.forEach(square => 
     {
         square.addEventListener("mouseover", () => 
         {
             square.classList.add("colored");
         });
     });
-
-
-function deleteGrid(squares)
-{
-    for (let i = 0; i < squares; i++)
-    {
-        let column = document.querySelector(".column")
-        column.remove()
-        for (let j = 1; j <= squares; j++)
-        {
-            let row = document.querySelector(".row")
-            row.remove()
-        }
-    }
 }
 
-//deleteGrid(squareNumber)
+makeGrid(16)
+colorCell()
 
+function deleteGrid()
+{
+    grid.innerHTML = ""
+}
+
+//deleteGrid()
+
+function newGrid()
+{
+    squareNumber = prompt("Enter new grid size (number of squares per side, must be less than 100): ")
+    return squareNumber
+
+}
+
+let newGridButton = document.querySelector(".newGrid")
+
+newGridButton.addEventListener("click", function()
+{
+    let cells = prompt("Enter new grid size (number of squares per side, must be less than 100): ")
+    let numberOfCells = parseInt(cells)
+    while (numberOfCells > 100)
+    {
+        cells = prompt("Enter new grid size (number of squares per side, must be less than 100): ")
+        numberOfCells = parseInt(cells)
+    }
+    deleteGrid()
+    makeGrid(numberOfCells)
+    colorCell()
+})
