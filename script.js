@@ -20,6 +20,7 @@ function makeGrid(squares)
 makeGrid(16)
 
 let squares = document.querySelectorAll(".grid .column .row");
+let squareNumber = squares.length
 
 squares.forEach(square => 
     {
@@ -44,5 +45,5 @@ function deleteGrid(squares)
     }
 }
 
-//deleteGrid(16)
+//deleteGrid(squareNumber)
 

@@ -43,3 +43,18 @@ body {
 .colored {
     background-color: black;
 }
+
+.newGrid {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+button {
+    width: 250px;
+    height: 75px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 3px solid black;
+    font-size: 30px;
+}
