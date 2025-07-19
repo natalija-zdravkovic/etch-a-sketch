@@ -10,7 +10,7 @@ function makeGrid(squares)
         {
             let row = document.createElement("div")
             row.classList.add("row")
-            row.style.border = "2px solid black"
+            row.style.border = "2px solid white"
             column.appendChild(row)
         }
         grid.appendChild(column)
@@ -46,7 +46,7 @@ function newGrid()
 
 }
 
-let newGridButton = document.querySelector(".newGrid")
+let newGridButton = document.querySelector(".newGridButton")
 
 newGridButton.addEventListener("click", function()
 {
